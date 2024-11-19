@@ -1,6 +1,6 @@
 ---
 title: Basic Python
-date: 2024-11-16
+date: 2024-11-19
 author: Your Name
 ---
 
