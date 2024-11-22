@@ -47,6 +47,233 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/email-validation.html"><h3 class="article-title">Email-Validation</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">validate_email</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$&#39;</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter email: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">validate_email</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valid email&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid email&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Enter</span><span class="w"> </span><span class="nl">email</span><span class="p">:</span><span class="w">  </span><span class="n">sound</span><span class="nv">@gmail</span><span class="p">.</span><span class="n">com</span>
+
+
+<span class="n">Invalid</span><span class="w"> </span><span class="n">email</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/email-validation.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/embed-gui.html"><h3 class="article-title">Embed-Gui</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">PhotoImage</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageTk</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate barcode</span>
+<span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">barcode_img</span> <span class="o">=</span> <span class="n">ean_code</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Tkinter window setup</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;EAN-13 Barcode&quot;</span><span class="p">)</span>
+<span class="c1"># Convert barcode to ImageTk format</span>
+<span class="n">photo</span> <span class="o">=</span> <span class="n">ImageTk …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/embed-gui.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-condition-ends.html"><h3 class="article-title">Generate-Condition-Ends</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_until_condition</span><span class="p">(</span><span class="n">condition</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">condition</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">name</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Example: Generate a name with more than 6 characters</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">generate_until_condition</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>cozy-cerise-mule
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-condition-ends.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-names-len.html"><h3 class="article-title">Generate-Names-Len</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_names</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">name</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="n">generate_names</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>stinky-ruby-maltese
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-names-len.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-store-dict.html"><h3 class="article-title">Generate-Store-Dict</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">store_names_in_dict</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">names_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+        <span class="n">names_dict</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Name_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">names_dict</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">names_dict</span> <span class="o">=</span> <span class="n">store_names_in_dict</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generated names in dictionary:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">names_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated names in dictionary:
+Name_1: squeaky-gamboge-fossa
+Name_2: goopy-plum-insect
+Name_3 …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-store-dict.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/generate-svg-format.html"><h3 class="article-title">Generate-Svg-Format</h3></a>
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
@@ -242,209 +469,9 @@
                 <hr  class="gradient"/>
             </article>
 
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/modifying-nested-values.html"><h3 class="article-title">Modifying-Nested-Values</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Define a class for Employee that supports attributes</span>
-<span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">contact</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">role</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">contact</span> <span class="o">=</span> <span class="n">contact</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Define a class for Company that holds a list of employees</span>
-<span class="k">class</span> <span class="nc">Company</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">employees</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">employees</span> <span class="o">=</span> <span class="n">employees</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Creating instances of …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/modifying-nested-values.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/nested-attribute-exists.html"><h3 class="article-title">Nested-Attribute-Exists</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Check if nested attributes exist</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.c&#39;</span><span class="p">))</span>  <span class="c1"># Output: True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.d&#39;</span><span class="p">))</span>  <span class="c1"># Output: False …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/nested-attribute-exists.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/retrieve-multiple-attributes.html"><h3 class="article-title">Retrieve-Multiple-Attributes</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;example&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mf">1.0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;A test example&#39;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Example</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Accessing multiple attributes</span>
-<span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">]]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>  <span class="c1"># Output: [&#39;example&#39;, 1.0, &#39;A test example&#39;]</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>[&#39;example …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/retrieve-multiple-attributes.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/return-img-obj.html"><h3 class="article-title">Return-Img-Obj</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Return image object instead of saving</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">ean_code</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Show the image</span>
-<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/return-img-obj.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/set-attributes-nested.html"><h3 class="article-title">Set-Attributes-Nested</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">SubExample</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Manually set the &#39;c&#39; attribute in each item of the list</span>
-<span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
-    <span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Print updated &#39;c …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/set-attributes-nested.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 2 of 3</h6>
+<h6 class="subheader">Page 2 of 4</h6>
 
 <p>
             <a href="https://Soundarya-Murugan.github.io/pynotes/author/your-name.html">&laquo; Prev</a>
@@ -470,8 +497,10 @@
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
    
         </ul>
 

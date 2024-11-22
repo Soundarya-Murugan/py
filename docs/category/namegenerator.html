@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>pynotes - namegenerator</title>
+
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://Soundarya-Murugan.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://Soundarya-Murugan.github.io/pynotes">pynotes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+        
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/add-timestamp.html"><h3 class="article-title">Add-Timestamp</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_name_with_timestamp</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">generated_name</span> <span class="o">=</span> <span class="n">generate_name_with_timestamp</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated name with timestamp: </span><span class="si">{</span><span class="n">generated_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated name with timestamp: dorky-myrtle-collie_20241122230315
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-condition-ends.html"><h3 class="article-title">Generate-Condition-Ends</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_until_condition</span><span class="p">(</span><span class="n">condition</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">condition</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">name</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Example: Generate a name with more than 6 characters</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">generate_until_condition</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>cozy-cerise-mule
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-condition-ends.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-names-len.html"><h3 class="article-title">Generate-Names-Len</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_names</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">name</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="n">generate_names</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>stinky-ruby-maltese
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-names-len.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-store-dict.html"><h3 class="article-title">Generate-Store-Dict</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">store_names_in_dict</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">names_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+        <span class="n">names_dict</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Name_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">names_dict</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">names_dict</span> <span class="o">=</span> <span class="n">store_names_in_dict</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generated names in dictionary:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">names_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated names in dictionary:
+Name_1: squeaky-gamboge-fossa
+Name_2: goopy-plum-insect
+Name_3 …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-store-dict.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/multiple-names.html"><h3 class="article-title">Multiple-Names</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_unique_names</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">unique_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_names</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_names</span><span class="p">:</span>
+            <span class="n">unique_names</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">unique_names</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">generate_unique_names</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generated unique names:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated unique names:
+gimpy-coral-bombay
+leaky-firebrick-tang
+frumpy-saffron-mayfly
+gloppy-lilac-caiman
+dorky-scarlet-horse
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/multiple-names.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/palindromatic-names.html"><h3 class="article-title">Palindromatic-Names</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_if_palindromic</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">is_palindrome</span> <span class="o">=</span> <span class="n">check_if_palindromic</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is palindrome: </span><span class="si">{</span><span class="n">is_palindrome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated name: crabby-gold-tamarin
+Is palindrome: False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/palindromatic-names.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/prefix-len.html"><h3 class="article-title">Prefix-Len</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_names_with_prefix</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">min_length</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_length</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">name</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;super&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">min_length</span> <span class="o">=</span> <span class="mi">8</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="n">generate_names_with_prefix</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">min_length</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated name: stuffy-wheat-harrier
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/prefix-len.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/print-names-len.html"><h3 class="article-title">Print-Names-Len</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">validate_name_length</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="n">length</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valid name of length </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated name does not meet the length requirement: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">validate_name_length</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/print-names-len.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/randam-name-pwd.html"><h3 class="article-title">Randam-Name-Pwd</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">string</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_password</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">random_char</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">name</span> <span class="o">+</span> <span class="n">random_char</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">password</span> <span class="o">=</span> <span class="n">generate_password</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated password: </span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated password: muzzy-linen-flounder]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/randam-name-pwd.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/reverse-random-names.html"><h3 class="article-title">Reverse-Random-Names</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_and_reverse_name</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">reversed_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">reversed_name</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">reversed_name</span> <span class="o">=</span> <span class="n">generate_and_reverse_name</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original name: </span><span class="si">{</span><span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reversed name: </span><span class="si">{</span><span class="n">reversed_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Original name: freaky-goldenrod-kakapo
+Reversed name: ognob-nirazila-ysaeuq
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/reverse-random-names.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+            <!-- /#posts-list -->
+<div class="pagination-centered">
+<h6 class="subheader">Page 1 of 1</h6>
+
+<p>
+
+</p>
+</div>
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/Soundarya-Murugan">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>pynotes by soundarya</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

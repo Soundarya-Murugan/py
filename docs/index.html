@@ -165,6 +165,50 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/add-timestamp.html"><h3 class="article-title">Add-Timestamp</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_name_with_timestamp</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">generated_name</span> <span class="o">=</span> <span class="n">generate_name_with_timestamp</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated name with timestamp: </span><span class="si">{</span><span class="n">generated_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated name with timestamp: dorky-myrtle-collie_20241122230315
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/add-timestamp.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/age-calculator.html"><h3 class="article-title">Age-Calculator</h3></a>
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
@@ -450,59 +494,9 @@
                 <hr  class="gradient"/>
             </article>
 
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/embed-gui.html"><h3 class="article-title">Embed-Gui</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">PhotoImage</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageTk</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Generate barcode</span>
-<span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">barcode_img</span> <span class="o">=</span> <span class="n">ean_code</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Tkinter window setup</span>
-<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;EAN-13 Barcode&quot;</span><span class="p">)</span>
-<span class="c1"># Convert barcode to ImageTk format</span>
-<span class="n">photo</span> <span class="o">=</span> <span class="n">ImageTk …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/embed-gui.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 1 of 3</h6>
+<h6 class="subheader">Page 1 of 4</h6>
 
 <p>
 
@@ -527,8 +521,10 @@
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
    
         </ul>
 
