@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>pynotes</title>
+    <title>Handle-Missing-Attributes</title>
 
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
@@ -42,56 +42,40 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/handle-missing-attributes.html" rel="bookmark"
+        title="Permalink to Handle-Missing-Attributes">Handle-Missing-Attributes</a></h3>
+    </header>
 
-<h3>Archives</h3>
-
-<table class="table-archive">
-    <tbody>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Title</th>
-                <th>Score</th>
-            </tr>
-        </thead>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
 
 
-        <!-- Display the total score -->
-        <p><strong>Overall Score:</strong> 15</p>
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">pass</span>
 
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='add-a-new-column.html'>Add-A-New-Column</a></td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='age-calculator.html'>Age-Calculator</a></td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='basic-python.html'>Basic Python</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='handle-missing-attributes.html'>Handle-Missing-Attributes</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='list-of-nested-objects.html'>List-Of-Nested-Objects</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='nested-attribute-exists.html'>Nested-Attribute-Exists</a></td>
-            <td>0</td>
-        </tr>
-    </tbody>
-</table>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.c&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;default_value&#39;</span><span class="p">))</span>  <span class="c1"># Output: &#39;default_value&#39;</span>
+</code></pre></div>
 
+<div class="highlight"><pre><span></span><code>default_value
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+
+</article>
     </div>
     <!-- End Main Content -->
 
