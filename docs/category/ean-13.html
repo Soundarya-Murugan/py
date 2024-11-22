@@ -91,6 +91,98 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/barcode-with-meta.html"><h3 class="article-title">Barcode-With-Meta</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFont</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Create an EAN-13 barcode</span>
+<span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate the barcode image</span>
+<span class="n">barcode_image</span> <span class="o">=</span> <span class="n">ean_code</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Add custom text (metadata) to the image</span>
+<span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">barcode_image</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">font</span> <span class="o">=</span> <span class="n">ImageFont</span><span class="o">.</span><span class="n">load_default</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Add custom text …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/barcode-with-meta.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/custom-colors.html"><h3 class="article-title">Custom-Colors</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Create an EAN-13 barcode</span>
+<span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Set custom colors for barcode</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;background&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span>  <span class="c1"># Background color</span>
+    <span class="s1">&#39;foreground&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>  <span class="c1"># Barcode color</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Apply the color options and save the barcode</span>
+<span class="n">ean_code</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;ean13_custom_colors&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&#39;ean13_custom_colors …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/custom-colors.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/customize-barcode-specific.html"><h3 class="article-title">Customize-Barcode-Specific</h3></a>
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
@@ -130,6 +222,56 @@
 
 
                 <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/customize-barcode-specific.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/embed-gui.html"><h3 class="article-title">Embed-Gui</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">PhotoImage</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageTk</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate barcode</span>
+<span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">barcode_img</span> <span class="o">=</span> <span class="n">ean_code</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Tkinter window setup</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;EAN-13 Barcode&quot;</span><span class="p">)</span>
+<span class="c1"># Convert barcode to ImageTk format</span>
+<span class="n">photo</span> <span class="o">=</span> <span class="n">ImageTk …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/embed-gui.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
