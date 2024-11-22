@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>pynotes - EAN-13</title>
+
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://Soundarya-Murugan.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://Soundarya-Murugan.github.io/pynotes">pynotes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+        
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/barcode-generation.html"><h3 class="article-title">Barcode-Generation</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Create barcode</span>
+<span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Save as PNG file</span>
+<span class="n">ean_code</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;ean13_barcode&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&#39;ean13_barcode.png&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/customize-barcode-specific.html"><h3 class="article-title">Customize-Barcode-Specific</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Customize the barcode</span>
+<span class="n">ean_code</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;text_distance&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;font_size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;module_width&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">})</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Save barcode with custom options</span>
+<span class="n">ean_code</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;custom_ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&#39;custom_ean13.png&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/customize-barcode-specific.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-svg-format.html"><h3 class="article-title">Generate-Svg-Format</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">SVGWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">SVGWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Save as SVG</span>
+<span class="n">ean_code</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;ean13_barcode_svg&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&#39;ean13_barcode_svg.svg&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-svg-format.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-without-text.html"><h3 class="article-title">Generate-Without-Text</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Disable text</span>
+<span class="n">ean_code</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;quiet_zone&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">})</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Save barcode without text</span>
+<span class="n">ean_code</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;ean13_no_text&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&#39;ean13_no_text.png&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-without-text.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/return-img-obj.html"><h3 class="article-title">Return-Img-Obj</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Return image object instead of saving</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ean_code</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Show the image</span>
+<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/return-img-obj.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/untitled.html"><h3 class="article-title">Untitled</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/untitled.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/validate-input.html"><h3 class="article-title">Validate-Input</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_ean13</span><span class="p">(</span><span class="n">ean</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\d</span><span class="si">{13}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">ean</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ean_input</span> <span class="o">=</span> <span class="s1">&#39;123456789012&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">is_valid_ean13</span><span class="p">(</span><span class="n">ean_input</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ean_input</span><span class="si">}</span><span class="s1"> is a valid EAN-13&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ean_input</span><span class="si">}</span><span class="s1"> is not a valid EAN-13&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">123456789012</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nb">val</span><span class="n">id</span><span class="w"> </span><span class="n">EAN</span><span class="o">-</span><span class="mf">13</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/validate-input.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+            <!-- /#posts-list -->
+<div class="pagination-centered">
+<h6 class="subheader">Page 1 of 1</h6>
+
+<p>
+
+</p>
+</div>
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/Soundarya-Murugan">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>pynotes by soundarya</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

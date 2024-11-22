@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Age-Calculator</title>
+    <title>Validate-Input</title>
 
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
@@ -44,32 +44,31 @@
     <div class="large-9 columns">
 <article>
     <header>
-        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/age-calculator.html" rel="bookmark"
-        title="Permalink to Age-Calculator">Age-Calculator</a></h3>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/validate-input.html" rel="bookmark"
+        title="Permalink to Validate-Input">Validate-Input</a></h3>
     </header>
 
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
 
 
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-    <span class="n">d1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">+</span> <span class="n">d1</span><span class="o">.</span><span class="n">month</span> <span class="o">-</span> <span class="n">d</span><span class="o">.</span><span class="n">month</span>
-
-    <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">months</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">year</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_ean13</span><span class="p">(</span><span class="n">ean</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\d</span><span class="si">{13}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">ean</span><span class="p">))</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="n">get_age</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1991</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">ean_input</span> <span class="o">=</span> <span class="s1">&#39;123456789012&#39;</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">age</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">is_valid_ean13</span><span class="p">(</span><span class="n">ean_input</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ean_input</span><span class="si">}</span><span class="s1"> is a valid EAN-13&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ean_input</span><span class="si">}</span><span class="s1"> is not a valid EAN-13&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="mf">33</span>
+<div class="highlight"><pre><span></span><code><span class="mf">123456789012</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nb">val</span><span class="n">id</span><span class="w"> </span><span class="n">EAN</span><span class="o">-</span><span class="mf">13</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
@@ -77,7 +76,7 @@
 
 <hr>
 <p><strong>Score: 5</strong></p>
-<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
 
 </p>
 
