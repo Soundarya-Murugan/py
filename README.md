@@ -16,8 +16,7 @@
 ```
 
 ### Change Settings
-```
-go to pelicanconf.py
+``` to pelicanconf.py
 
 change the necessary changes to update:
     AUTHOR

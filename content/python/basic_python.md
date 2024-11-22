@@ -1,7 +1,9 @@
 ---
 title: Basic Python
-date: 2024-11-19
+date: 2024-11-22
 author: Your Name
+cell_count: 2
+score: 0
 ---
 
 ```python
@@ -19,3 +21,7 @@ author: Your Name
 ```python
 
 ```
+
+
+---
+**Score: 0**
