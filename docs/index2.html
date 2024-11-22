@@ -53,17 +53,20 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;example&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mf">1.0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;A test example&#39;</span>
+</code></pre></div>
 
-<span class="c1"># Create an instance of Example</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Example</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Accessing multiple attributes</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Accessing multiple attributes</span>
 <span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>  <span class="c1"># Output: [&#39;example&#39;, 1.0, &#39;A test example&#39;]</span>
 </code></pre></div>
@@ -88,22 +91,27 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">SubExample</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</code></pre></div>
 
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Manually set the &#39;c&#39; attribute in each item of the list</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Manually set the &#39;c&#39; attribute in each item of the list</span>
 <span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
     <span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="c1"># Print updated &#39;c …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+<div class="highlight"><pre><span></span><code><span class="c1"># Print updated &#39;c …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>
 
@@ -123,19 +131,23 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="c1"># Define the class</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define the class</span>
 <span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}</span>  <span class="c1"># a dictionary inside the object</span>
+</code></pre></div>
 
-<span class="c1"># Create an instance of Example</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Example</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Directly modify the dictionary attribute</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Directly modify the dictionary attribute</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;new_value&#39;</span>
+</code></pre></div>
 
-<span class="c1"># Output the modified value</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Output the modified value</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">])</span>  <span class="c1"># Expected Output: &#39;new_value&#39;</span>
 </code></pre></div>
 

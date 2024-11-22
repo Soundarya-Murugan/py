@@ -2,12 +2,17 @@
 title: Nested-Attribute-Exists
 date: 2024-11-22
 author: Your Name
-cell_count: 2
-score: 0
+cell_count: 6
+score: 5
 ---
 
 ```python
 import magicattr
+
+```
+
+
+```python
 
 def has_attr(obj, attr):
     try:
@@ -16,16 +21,31 @@ def has_attr(obj, attr):
     except AttributeError:
         return False
 
+
+
+```
+
+
+```python
 class Example:
     def __init__(self):
         self.a = {'b': {'c': 'value'}}
 
+
+```
+
+
+```python
 obj = Example()
 
+
+```
+
+
+```python
 # Check if nested attributes exist
 print(has_attr(obj, 'a.b.c'))  # Output: True
 print(has_attr(obj, 'a.b.d'))  # Output: False
-
 ```
 
     False
@@ -39,4 +59,4 @@ print(has_attr(obj, 'a.b.d'))  # Output: False
 
 
 ---
-**Score: 0**
+**Score: 5**

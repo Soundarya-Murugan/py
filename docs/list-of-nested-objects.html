@@ -53,20 +53,26 @@
 
 
     <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">SubExample</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</code></pre></div>
 
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Use list comprehension to access the attribute &#39;c&#39; in each object in the list &#39;a&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Use list comprehension to access the attribute &#39;c&#39; in each object in the list &#39;a&#39;</span>
 <span class="n">c_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c_values</span><span class="p">)</span>  <span class="c1"># Output: [1, 2, 3]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">c_values</span><span class="p">)</span>  <span class="c1"># Output: [1, 2, 3]</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>[1, 2, 3]
@@ -76,7 +82,7 @@
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 0</strong></p>
+<p><strong>Score: 5</strong></p>
 <p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>

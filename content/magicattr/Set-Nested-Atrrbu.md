@@ -2,30 +2,40 @@
 title: Set-Nested-Atrrbu
 date: 2024-11-22
 author: Your Name
-cell_count: 2
-score: 0
+cell_count: 6
+score: 5
 ---
 
 ```python
 import magicattr
+```
 
+
+```python
 # Define the class
 class Example:
     def __init__(self):
         self.a = {'b': {'c': 'value'}}  # a dictionary inside the object
+```
 
+
+```python
 # Create an instance of Example
 obj = Example()
 
+```
+
+
+```python
 # Directly modify the dictionary attribute
 obj.a['b']['c'] = 'new_value'
 
+```
+
+
+```python
 # Output the modified value
 print(obj.a['b']['c'])  # Expected Output: 'new_value'
-
-
-
-
 ```
 
     new_value
@@ -38,4 +48,4 @@ print(obj.a['b']['c'])  # Expected Output: 'new_value'
 
 
 ---
-**Score: 0**
+**Score: 5**

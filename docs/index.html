@@ -52,39 +52,47 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="c1"># Define the Inner class</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define the Inner class</span>
 <span class="k">class</span> <span class="nc">Inner</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span>
+</code></pre></div>
 
-<span class="c1"># Define the Outer class</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define the Outer class</span>
 <span class="k">class</span> <span class="nc">Outer</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">inner</span> <span class="o">=</span> <span class="n">Inner</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Create an instance of Outer</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Outer</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Outer</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Accessing the nested attribute &#39;value&#39; using magicattr</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Accessing the nested attribute &#39;value&#39; using magicattr</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;inner.value&#39;</span><span class="p">))</span>  <span class="c1"># Output: 5</span>
-
-<span class="c1"># Setting the nested attribute &#39;value&#39; using magicattr</span>
-<span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;inner.value&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Verify the update</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># Output: 10</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="mf">5</span>
-<span class="mf">10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Setting the nested attribute &#39;value&#39; using magicattr</span>
+<span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;inner.value&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Verify the update</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># Output: 10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">10</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>
 
@@ -235,11 +243,13 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotmap</span> <span class="kn">import</span> <span class="n">DotMap</span>
+</code></pre></div>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">DotMap</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}}})</span>
+<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">DotMap</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}}})</span>
+</code></pre></div>
 
-<span class="c1"># Accessing nested attributes with dot notation</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>  <span class="c1"># Output: 100</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Accessing nested attributes with dot notation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="p">)</span> 
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="mf">100</span>
@@ -269,11 +279,16 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
-    <span class="k">pass</span>
+</code></pre></div>
 
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.c&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;default_value&#39;</span><span class="p">))</span>  <span class="c1"># Output: &#39;default_value&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.c&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;default_value&#39;</span><span class="p">))</span>  <span class="c1"># Output: &#39;default_value&#39;</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>default_value
@@ -283,7 +298,7 @@
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>
 
@@ -303,19 +318,23 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">details</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">details</span> <span class="o">=</span> <span class="n">details</span>  <span class="c1"># details is a dictionary with nested data</span>
+</code></pre></div>
 
-<span class="c1"># Create a Person instance</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a Person instance</span>
 <span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Wonderland&#39;</span><span class="p">,</span> <span class="s1">&#39;zip&#39;</span><span class="p">:</span> <span class="s1">&#39;12345&#39;</span><span class="p">}})</span>
+</code></pre></div>
 
-<span class="c1"># Using magicattr to set the &#39;name&#39; attribute</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Using magicattr to set the &#39;name&#39; attribute</span>
 <span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="c1"># Directly manipulate the nested …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+<div class="highlight"><pre><span></span><code><span class="c1"># Directly manipulate the nested …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>
 
@@ -335,18 +354,22 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">SubExample</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</code></pre></div>
 
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Use list comprehension to access the attribute &#39;c&#39; in each object in the list &#39;a&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Use list comprehension to access the attribute &#39;c&#39; in each object in the list &#39;a&#39;</span>
 <span class="n">c_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>
@@ -367,20 +390,23 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="c1"># Define a class for Employee that supports attributes</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define a class for Employee that supports attributes</span>
 <span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">contact</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">role</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">contact</span> <span class="o">=</span> <span class="n">contact</span>
+</code></pre></div>
 
-<span class="c1"># Define a class for Company that holds a list of employees</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define a class for Company that holds a list of employees</span>
 <span class="k">class</span> <span class="nc">Company</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">employees</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">employees</span> <span class="o">=</span> <span class="n">employees</span>
+</code></pre></div>
 
-<span class="c1"># Creating instances of …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating instances of …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>
 
@@ -400,21 +426,25 @@
 
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">def</span> <span class="nf">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}</span>
+</code></pre></div>
 
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Check if nested attributes exist</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check if nested attributes exist</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.c&#39;</span><span class="p">))</span>  <span class="c1"># Output: True</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.d&#39;</span><span class="p">))</span>  <span class="c1"># Output: False …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 

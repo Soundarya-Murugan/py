@@ -53,17 +53,20 @@
 
 
     <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;example&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mf">1.0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;A test example&#39;</span>
+</code></pre></div>
 
-<span class="c1"># Create an instance of Example</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Example</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Accessing multiple attributes</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Accessing multiple attributes</span>
 <span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>  <span class="c1"># Output: [&#39;example&#39;, 1.0, &#39;A test example&#39;]</span>
 </code></pre></div>
@@ -75,7 +78,7 @@
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 0</strong></p>
+<p><strong>Score: 5</strong></p>
 <p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>

@@ -53,35 +53,42 @@
 
 
     <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="c1"># Define a class for Employee that supports attributes</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define a class for Employee that supports attributes</span>
 <span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">contact</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">role</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">contact</span> <span class="o">=</span> <span class="n">contact</span>
+</code></pre></div>
 
-<span class="c1"># Define a class for Company that holds a list of employees</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define a class for Company that holds a list of employees</span>
 <span class="k">class</span> <span class="nc">Company</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">employees</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">employees</span> <span class="o">=</span> <span class="n">employees</span>
+</code></pre></div>
 
-<span class="c1"># Creating instances of Employee</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating instances of Employee</span>
 <span class="n">company</span> <span class="o">=</span> <span class="n">Company</span><span class="p">([</span>
     <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Manager&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;john@example.com&#39;</span><span class="p">}),</span>
     <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Developer&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;jane@example.com&#39;</span><span class="p">})</span>
 <span class="p">])</span>
+</code></pre></div>
 
-<span class="c1"># Using magicattr to set the &#39;role&#39; attribute of the first employee</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Using magicattr to set the &#39;role&#39; attribute of the first employee</span>
 <span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">company</span><span class="p">,</span> <span class="s1">&#39;employees[0].role&#39;</span><span class="p">,</span> <span class="s1">&#39;Senior Manager&#39;</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="c1"># Directly modifying the nested &#39;email&#39; value in the second employee&#39;s dictionary</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Directly modifying the nested &#39;email&#39; value in the second employee&#39;s dictionary</span>
 <span class="n">company</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">contact</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;jane.new@example.com&#39;</span>
+</code></pre></div>
 
-<span class="c1"># Using magicattr to get the updated role of the first employee</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Using magicattr to get the updated role of the first employee</span>
 <span class="n">role</span> <span class="o">=</span> <span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">company</span><span class="p">,</span> <span class="s1">&#39;employees[0].role&#39;</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="c1"># Output the modified values</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Output the modified values</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">role</span><span class="p">)</span>  <span class="c1"># Expected Output: &#39;Senior Manager&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">company</span><span class="o">.</span><span class="n">employees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">contact</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">])</span>  <span class="c1"># Expected Output: &#39;jane.new@example.com&#39;</span>
 </code></pre></div>
@@ -94,7 +101,7 @@
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 0</strong></p>
+<p><strong>Score: 5</strong></p>
 <p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>

@@ -53,21 +53,25 @@
 
 
     <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="k">def</span> <span class="nf">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}</span>
+</code></pre></div>
 
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Check if nested attributes exist</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check if nested attributes exist</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.c&#39;</span><span class="p">))</span>  <span class="c1"># Output: True</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">has_attr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;a.b.d&#39;</span><span class="p">))</span>  <span class="c1"># Output: False</span>
 </code></pre></div>
@@ -80,7 +84,7 @@ False
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 0</strong></p>
+<p><strong>Score: 5</strong></p>
 <p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>

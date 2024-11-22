@@ -53,19 +53,23 @@
 
 
     <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
 
-<span class="c1"># Define the class</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define the class</span>
 <span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}</span>  <span class="c1"># a dictionary inside the object</span>
+</code></pre></div>
 
-<span class="c1"># Create an instance of Example</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Example</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
 
-<span class="c1"># Directly modify the dictionary attribute</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Directly modify the dictionary attribute</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;new_value&#39;</span>
+</code></pre></div>
 
-<span class="c1"># Output the modified value</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Output the modified value</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">])</span>  <span class="c1"># Expected Output: &#39;new_value&#39;</span>
 </code></pre></div>
 
@@ -76,7 +80,7 @@
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 0</strong></p>
+<p><strong>Score: 5</strong></p>
 <p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
 
 </p>
