@@ -55,7 +55,7 @@ DEFAULT_PAGINATION          = 10
 # Use SITEURL for absolute paths; RELATIVE_URLS is typically for local preview
 RELATIVE_URLS = False
 
-THEME               = 'themes/lind3'
+THEME               = 'themes/zurb-F5-basic'
 
 IGNORE_FILES        = [".*", "*.swp", "*~"]  # Ignore hidden files and temporary files
 
