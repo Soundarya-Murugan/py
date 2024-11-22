@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>pynotes</title>
+    <title>Set-Nested-Atrrbu</title>
 
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
@@ -42,91 +42,49 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/set-nested-atrrbu.html" rel="bookmark"
+        title="Permalink to Set-Nested-Atrrbu">Set-Nested-Atrrbu</a></h3>
+    </header>
 
-<h3>Archives</h3>
-
-<table class="table-archive">
-    <tbody>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Title</th>
-                <th>Score</th>
-            </tr>
-        </thead>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
 
 
-        <!-- Display the total score -->
-        <p><strong>Overall Score:</strong> 15</p>
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
 
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='access-modify-deeply-nested.html'>Access-Modify-Deeply-Nested</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='add-a-new-column.html'>Add-A-New-Column</a></td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='age-calculator.html'>Age-Calculator</a></td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='basic-python.html'>Basic Python</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='dictionary-value.html'>Dictionary-Value</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='handle-missing-attributes.html'>Handle-Missing-Attributes</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='handling-nested-dictionaries.html'>Handling-Nested-Dictionaries</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='list-of-nested-objects.html'>List-Of-Nested-Objects</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='modifying-nested-values.html'>Modifying-Nested-Values</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='nested-attribute-exists.html'>Nested-Attribute-Exists</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='retrieve-multiple-attributes.html'>Retrieve-Multiple-Attributes</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='set-attributes-nested.html'>Set-Attributes-Nested</a></td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>Fri 22 November 2024</td>
-            <td><a href='set-nested-atrrbu.html'>Set-Nested-Atrrbu</a></td>
-            <td>0</td>
-        </tr>
-    </tbody>
-</table>
+<span class="c1"># Define the class</span>
+<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}</span>  <span class="c1"># a dictionary inside the object</span>
 
+<span class="c1"># Create an instance of Example</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+
+<span class="c1"># Directly modify the dictionary attribute</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;new_value&#39;</span>
+
+<span class="c1"># Output the modified value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">])</span>  <span class="c1"># Expected Output: &#39;new_value&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>new_value
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+
+</article>
     </div>
     <!-- End Main Content -->
 

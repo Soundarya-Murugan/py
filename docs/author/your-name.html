@@ -46,6 +46,60 @@
         
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/access-modify-deeply-nested.html"><h3 class="article-title">Access-Modify-Deeply-Nested</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+
+<span class="c1"># Define the Inner class</span>
+<span class="k">class</span> <span class="nc">Inner</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Define the Outer class</span>
+<span class="k">class</span> <span class="nc">Outer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inner</span> <span class="o">=</span> <span class="n">Inner</span><span class="p">()</span>
+
+<span class="c1"># Create an instance of Outer</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Outer</span><span class="p">()</span>
+
+<span class="c1"># Accessing the nested attribute &#39;value&#39; using magicattr</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;inner.value&#39;</span><span class="p">))</span>  <span class="c1"># Output: 5</span>
+
+<span class="c1"># Setting the nested attribute &#39;value&#39; using magicattr</span>
+<span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;inner.value&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Verify the update</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># Output: 10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">5</span>
+<span class="mf">10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/add-a-new-column.html"><h3 class="article-title">Add-A-New-Column</h3></a>
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
@@ -89,105 +143,15 @@
         vertical-align: top;
     }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>city</th>
-      <th>points</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Toronto</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Montreal</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Waterloo</td>
-      <td>90</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">df</span>
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>city</th>
-      <th>points</th>
-      <th>code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Toronto</td>
-      <td>80</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Montreal</td>
-      <td>70</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Waterloo</td>
-      <td>90</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 10</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a>
+    .dataframe thead th …</style></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a>
 
 </p>
 
 
 
-            </article>
-
-
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/add-a-new-column.html">Read More</a>
                 <hr  class="gradient"/>
-
+            </article>
 
         
 
@@ -265,6 +229,40 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/dictionary-value.html"><h3 class="article-title">Dictionary-Value</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotmap</span> <span class="kn">import</span> <span class="n">DotMap</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">DotMap</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}}})</span>
+
+<span class="c1"># Accessing nested attributes with dot notation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>  <span class="c1"># Output: 100</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">100</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/dictionary-value.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/handle-missing-attributes.html"><h3 class="article-title">Handle-Missing-Attributes</h3></a>
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
@@ -299,6 +297,38 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/handling-nested-dictionaries.html"><h3 class="article-title">Handling-Nested-Dictionaries</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">details</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">details</span> <span class="o">=</span> <span class="n">details</span>  <span class="c1"># details is a dictionary with nested data</span>
+
+<span class="c1"># Create a Person instance</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Wonderland&#39;</span><span class="p">,</span> <span class="s1">&#39;zip&#39;</span><span class="p">:</span> <span class="s1">&#39;12345&#39;</span><span class="p">}})</span>
+
+<span class="c1"># Using magicattr to set the &#39;name&#39; attribute</span>
+<span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">)</span>
+
+<span class="c1"># Directly manipulate the nested …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/handling-nested-dictionaries.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/list-of-nested-objects.html"><h3 class="article-title">List-Of-Nested-Objects</h3></a>
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
@@ -324,6 +354,39 @@
 
 
                 <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/list-of-nested-objects.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/modifying-nested-values.html"><h3 class="article-title">Modifying-Nested-Values</h3></a>
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+
+<span class="c1"># Define a class for Employee that supports attributes</span>
+<span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">contact</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">role</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contact</span> <span class="o">=</span> <span class="n">contact</span>
+
+<span class="c1"># Define a class for Company that holds a list of employees</span>
+<span class="k">class</span> <span class="nc">Company</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">employees</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">employees</span> <span class="o">=</span> <span class="n">employees</span>
+
+<span class="c1"># Creating instances of …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/modifying-nested-values.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
@@ -365,10 +428,11 @@
 
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 1 of 1</h6>
+<h6 class="subheader">Page 1 of 2</h6>
 
 <p>
 
+        <a href="https://Soundarya-Murugan.github.io/pynotes/author/your-name2.html">Next &raquo;</a>
 </p>
 </div>
 

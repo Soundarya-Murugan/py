@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Access-Modify-Deeply-Nested</title>
+
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://Soundarya-Murugan.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://Soundarya-Murugan.github.io/pynotes">pynotes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/access-modify-deeply-nested.html" rel="bookmark"
+        title="Permalink to Access-Modify-Deeply-Nested">Access-Modify-Deeply-Nested</a></h3>
+    </header>
+
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+
+<span class="c1"># Define the Inner class</span>
+<span class="k">class</span> <span class="nc">Inner</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Define the Outer class</span>
+<span class="k">class</span> <span class="nc">Outer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inner</span> <span class="o">=</span> <span class="n">Inner</span><span class="p">()</span>
+
+<span class="c1"># Create an instance of Outer</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Outer</span><span class="p">()</span>
+
+<span class="c1"># Accessing the nested attribute &#39;value&#39; using magicattr</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;inner.value&#39;</span><span class="p">))</span>  <span class="c1"># Output: 5</span>
+
+<span class="c1"># Setting the nested attribute &#39;value&#39; using magicattr</span>
+<span class="n">magicattr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;inner.value&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Verify the update</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># Output: 10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">5</span>
+<span class="mf">10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/Soundarya-Murugan">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>pynotes by soundarya</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
