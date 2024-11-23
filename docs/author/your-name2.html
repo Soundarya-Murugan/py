@@ -137,6 +137,42 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/fibonacci-series.html"><h3 class="article-title">Fibonacci-Series</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Function to generate Fibonacci sequence</span>
+<span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">sequence</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Number of terms to generate</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="mi">10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fibonacci sequence with </span><span class="si">{</span><span class="n">terms</span><span class="si">}</span><span class="s2"> terms: </span><span class="si">{</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Fibonacci sequence with 10 terms: [0 …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/fibonacci-series.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/generate-condition-ends.html"><h3 class="article-title">Generate-Condition-Ends</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
@@ -423,55 +459,6 @@ Name_3 …</code></pre></div><p class="subheader">Category: <a href="https://Sou
 
 
                 <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/handling-nested-dictionaries.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/hashtag-extractor.html"><h3 class="article-title">Hashtag-Extractor</h3></a>
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_hashtags</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="n">hashtag_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;#\w+&#39;</span>
-    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">hashtag_regex</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Test text</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Today is a great day! #sunny #weekend #fun</span>
-<span class="s2">Let&#39;s enjoy the #sunshine and have a #picnic.</span>
-<span class="s2">&quot;&quot;&quot;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">hashtags</span> <span class="o">=</span> <span class="n">extract_hashtags</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracted hashtags:&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>Extracted hashtags:
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">hashtag</span> <span class="ow">in</span> <span class="n">hashtags</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hashtag</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>#sunny
-#weekend
-#fun …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/hashtag-extractor.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

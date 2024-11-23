@@ -47,6 +47,55 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/hashtag-extractor.html"><h3 class="article-title">Hashtag-Extractor</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_hashtags</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">hashtag_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;#\w+&#39;</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">hashtag_regex</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test text</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Today is a great day! #sunny #weekend #fun</span>
+<span class="s2">Let&#39;s enjoy the #sunshine and have a #picnic.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">hashtags</span> <span class="o">=</span> <span class="n">extract_hashtags</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracted hashtags:&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Extracted hashtags:
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">hashtag</span> <span class="ow">in</span> <span class="n">hashtags</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hashtag</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>#sunny
+#weekend
+#fun …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/hashtag-extractor.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/list-of-nested-objects.html"><h3 class="article-title">List-Of-Nested-Objects</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
@@ -302,6 +351,39 @@ Is palindrome: False
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/prime-number.html"><h3 class="article-title">Prime-Number</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Function to check if a number is prime</span>
+<span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test the function</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">29</span>
+<span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is a prime number.&quot;</span><span class="p">)</span>
+<span class="k">else …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/prime-number.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/print-names-len.html"><h3 class="article-title">Print-Names-Len</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
@@ -376,85 +458,6 @@ Is palindrome: False
 
 
                 <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/randam-name-pwd.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/replace-specific-words.html"><h3 class="article-title">Replace-Specific-Words</h3></a>
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">replace_words</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">word_dict</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">replacement</span> <span class="ow">in</span> <span class="n">word_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\b&#39;</span> <span class="o">+</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;\b&#39;</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">text</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I love Python. Python is awesome.&quot;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">word_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Python&quot;</span><span class="p">:</span> <span class="s2">&quot;Java&quot;</span><span class="p">}</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">modified_text</span> <span class="o">=</span> <span class="n">replace_words</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">word_dict</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified text:&quot;</span><span class="p">,</span> <span class="n">modified_text</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>Modified text: I love …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/replace-specific-words.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/retrieve-multiple-attributes.html"><h3 class="article-title">Retrieve-Multiple-Attributes</h3></a>
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;example&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mf">1.0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;A test example&#39;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Example</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Accessing multiple attributes</span>
-<span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">]]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>  <span class="c1"># Output: [&#39;example&#39;, 1.0, &#39;A test example&#39;]</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>[&#39;example …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/retrieve-multiple-attributes.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

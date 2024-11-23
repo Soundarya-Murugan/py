@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Basic Python</title>
+    <title>Fibonacci-Series</title>
 
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
@@ -44,54 +44,39 @@
     <div class="large-9 columns">
 <article>
     <header>
-        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/basic-python.html" rel="bookmark"
-        title="Permalink to Basic Python">Basic Python</a></h3>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/fibonacci-series.html" rel="bookmark"
+        title="Permalink to Fibonacci-Series">Fibonacci-Series</a></h3>
     </header>
 
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
-    <div class="highlight"><pre><span></span><code><span class="c1"># Define a function to greet a user</span>
-<span class="k">def</span> <span class="nf">greet_user</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">! Welcome to Python programming.&quot;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="c1"># Function to generate Fibonacci sequence</span>
+<span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">sequence</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># Define a function to add two numbers</span>
-<span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Number of terms to generate</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="mi">10</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># Main program</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="c1"># Variable declaration</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
-    <span class="n">number1</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">number2</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fibonacci sequence with </span><span class="si">{</span><span class="n">terms</span><span class="si">}</span><span class="s2"> terms: </span><span class="si">{</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>    <span class="c1"># Function calls</span>
-    <span class="n">greet_user</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>Hello, Alice! Welcome to Python programming.
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>    <span class="n">result</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>    <span class="c1"># Print result</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The sum of </span><span class="si">{</span><span class="n">number1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">number2</span><span class="si">}</span><span class="s2"> is: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>The sum of 5 and 3 is: 8
+<div class="highlight"><pre><span></span><code>Fibonacci sequence with 10 terms: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 5</strong></p>
+<p><strong>Score: 0</strong></p>
 <p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a>
 
 </p>
