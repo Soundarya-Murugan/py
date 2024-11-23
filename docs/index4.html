@@ -47,6 +47,79 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/hover-scatter.html"><h3 class="article-title">Hover-Scatter</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Scatter plot with hover tool</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">save</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span>
+
+<span class="n">output_file</span><span class="p">(</span><span class="s2">&quot;hover_scatter.html&quot;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Hover Scatter Plot&quot;</span><span class="p">,</span> <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Add scatter plot</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5 …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/hover-scatter.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/ip-addr-validator.html"><h3 class="article-title">Ip-Addr-Validator</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Validates if a string is a valid IPv4 address.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_ip</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
+    <span class="n">ip_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)</span><span class="si">{3}</span><span class="s1">(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">ip_regex</span><span class="p">,</span> <span class="n">ip</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test cases</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ips</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;255.255.255.255 …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/ip-addr-validator.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/line-circle-plot.html"><h3 class="article-title">Line Circle Plot</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
@@ -183,6 +256,44 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/lottery-no-generator.html"><h3 class="article-title">Lottery-No-Generator</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Lottery Number Generator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_lottery_numbers</span><span class="p">():</span>
+    <span class="n">main_numbers</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">powerball</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">main_numbers</span><span class="p">,</span> <span class="n">powerball</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lottery Numbers:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">main</span><span class="p">,</span> <span class="n">powerball</span> <span class="o">=</span> <span class="n">generate_lottery_numbers</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Main Numbers: </span><span class="si">{</span><span class="n">main</span><span class="si">}</span><span class="s2">, Powerball: </span><span class="si">{</span><span class="n">powerball</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Lottery Numbers:
+Main Numbers: [7, 48, 33, 18, 1], Powerball …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/lottery-no-generator.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/modifying-nested-values.html"><h3 class="article-title">Modifying-Nested-Values</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
@@ -308,147 +419,9 @@ dorky-scarlet-horse
                 <hr  class="gradient"/>
             </article>
 
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/palindromatic-names.html"><h3 class="article-title">Palindromatic-Names</h3></a>
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_if_palindromic</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">is_palindrome</span> <span class="o">=</span> <span class="n">check_if_palindromic</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is palindrome: </span><span class="si">{</span><span class="n">is_palindrome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>Generated name: crabby-gold-tamarin
-Is palindrome: False
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/palindromatic-names.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/phone-no-extractor.html"><h3 class="article-title">Phone-No-Extractor</h3></a>
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="c1">#Extracts phone numbers in various formats from a block of text.</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_phone_numbers</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="n">phone_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\+?\d[\d\s()-]{7,}\d&#39;</span>
-    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">phone_regex</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1">#Test Text</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Test text</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Here are some phone numbers:</span>
-<span class="s2">- +1-800-555-1234</span>
-<span class="s2">- (123) 456 7890</span>
-<span class="s2">- 1234567890</span>
-<span class="s2">- +91 9876543210</span>
-<span class="s2">&quot;&quot;&quot;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1">#Phone Numbers </span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">phones</span> <span class="o">=</span> <span class="n">extract_phone_numbers</span><span class="p">(</span><span class="n">text …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/phone-no-extractor.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/pie-chart-graph.html"><h3 class="article-title">Pie-Chart-Graph</h3></a>
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="c1">#Pie chart</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">save</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.palettes</span> <span class="kn">import</span> <span class="n">Category20c</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.transform</span> <span class="kn">import</span> <span class="n">cumsum</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Output to an HTML file</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">output_file</span><span class="p">(</span><span class="s2">&quot;pie_chart_graph.html&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Create the data</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;fruits&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Banana&#39;</span><span class="p">,</span> <span class="s1">&#39;Cherry&#39;</span><span class="p">,</span> <span class="s1">&#39;Grape …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/pie-chart-graph.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 4 of 6</h6>
+<h6 class="subheader">Page 4 of 7</h6>
 
 <p>
             <a href="https://Soundarya-Murugan.github.io/pynotes/index3.html">&laquo; Prev</a>
@@ -479,6 +452,7 @@ Is palindrome: False
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
    
         </ul>

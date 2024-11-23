@@ -212,6 +212,49 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/dice-roll-simulation.html"><h3 class="article-title">Dice-Roll-Simulation</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Dice Roll Simulation</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">simulate_dice_rolls</span><span class="p">(</span><span class="n">rolls</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)}</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rolls</span><span class="p">):</span>
+        <span class="n">roll</span> <span class="o">=</span> <span class="n">roll_dice</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">[</span><span class="n">roll</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">rolls</span> <span class="o">=</span> <span class="mi">1000</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">results</span> <span class="o">=</span> <span class="n">simulate_dice_rolls</span><span class="p">(</span><span class="n">rolls</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dice Roll Simulation Results (Total Rolls …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/dice-roll-simulation.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/dictionary-value.html"><h3 class="article-title">Dictionary-Value</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
@@ -376,88 +419,46 @@
 
 
             <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-condition-ends.html"><h3 class="article-title">Generate-Condition-Ends</h3></a>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/float-values.html"><h3 class="article-title">Float-Values</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#Generate a Random Floating-Point Number Between 0 and 1</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_until_condition</span><span class="p">(</span><span class="n">condition</span><span class="p">):</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">condition</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">name</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># Example: Generate a name with more than 6 characters</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">generate_until_condition</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Random float between 0 and 1</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">random_float</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>cozy-cerise-mule
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">random_float</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">0.12814004672918555</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a>
 
 </p>
 
 
 
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-condition-ends.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/generate-names-len.html"><h3 class="article-title">Generate-Names-Len</h3></a>
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_names</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
-    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">name</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="n">generate_names</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>stinky-ruby-maltese
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/generate-names-len.html">Read More</a>
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/float-values.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 2 of 6</h6>
+<h6 class="subheader">Page 2 of 7</h6>
 
 <p>
             <a href="https://Soundarya-Murugan.github.io/pynotes/author/your-name.html">&laquo; Prev</a>
@@ -488,6 +489,7 @@
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
    
         </ul>
