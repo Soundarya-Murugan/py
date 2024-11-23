@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Boxplot</title>
+
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://Soundarya-Murugan.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://Soundarya-Murugan.github.io/pynotes">pynotes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/boxplot.html" rel="bookmark"
+        title="Permalink to Boxplot">Boxplot</a></h3>
+    </header>
+
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1">#Box Plot</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">std</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">vert</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">patch_artist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x7f4e3c621eb0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c622150&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c623110&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c623410&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c65c4d0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c65c7d0&gt;],
+ &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x7f4e3c622420&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c622720&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c623710&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c623a10&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c65ca70&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c65cd70&gt;],
+ &#39;boxes&#39;: [&lt;matplotlib.patches.PathPatch at 0x7f4e3cea2570&gt;,
+  &lt;matplotlib.patches.PathPatch at 0x7f4e3c622d50&gt;,
+  &lt;matplotlib.patches.PathPatch at 0x7f4e3c65c0e0&gt;],
+ &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x7f4e3c622990&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c623d10&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c65cfe0&gt;],
+ &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x7f4e3c622c90&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c65c050&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7f4e3c65d280&gt;],
+ &#39;means&#39;: []}
+</code></pre></div>
+
+<p><img alt="png" src="Boxplot_files/Boxplot_4_1.png"></p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Box Plot&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Text(0.5, 1.0, &#39;Box Plot&#39;)
+</code></pre></div>
+
+<p><img alt="png" src="Boxplot_files/Boxplot_5_1.png"></p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Categories&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Text(0.5, 0, &#39;Categories&#39;)
+</code></pre></div>
+
+<p><img alt="png" src="Boxplot_files/Boxplot_6_1.png"></p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Values&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Text(0, 0.5, &#39;Values&#39;)
+</code></pre></div>
+
+<p><img alt="png" src="Boxplot_files/Boxplot_7_1.png"></p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 10</strong></p>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/Soundarya-Murugan">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>pynotes by soundarya</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
