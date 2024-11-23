@@ -2,9 +2,14 @@
 title: Email-Validation
 date: 2024-11-23
 author: Your Name
-cell_count: 5
+cell_count: 6
 score: 5
 ---
+
+```python
+#Validates if a given email address meets common email standards.
+```
+
 
 ```python
 import re

@@ -474,41 +474,41 @@
 
 
             <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/dictionary-value.html"><h3 class="article-title">Dictionary-Value</h3></a>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/date-validator.html"><h3 class="article-title">Date-Validator</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotmap</span> <span class="kn">import</span> <span class="n">DotMap</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#Validates a date format (e.g., DD/MM/YYYY).</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">DotMap</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}}})</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># Accessing nested attributes with dot notation</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="p">)</span> 
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_date</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+    <span class="n">date_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d</span><span class="si">{4}</span><span class="s1">$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">date_regex</span><span class="p">,</span> <span class="n">date</span><span class="p">))</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="mf">100</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test cases</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;31/12/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;01/01/2000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;29/02/2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;32/01/2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;12 …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
 
 </p>
 
 
 
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/dictionary-value.html">Read More</a>
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/date-validator.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 1 of 4</h6>
+<h6 class="subheader">Page 1 of 5</h6>
 
 <p>
 

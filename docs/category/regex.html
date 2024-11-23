@@ -46,41 +46,44 @@
         
 
             <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/email-validation.html"><h3 class="article-title">Email-Validation</h3></a>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/date-validator.html"><h3 class="article-title">Date-Validator</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
+<div class="highlight"><pre><span></span><code><span class="c1">#Validates a date format (e.g., DD/MM/YYYY).</span>
+</code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_email</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
-    <span class="c1"># Regular expression for validating an email</span>
-    <span class="n">email_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$&#39;</span>
-    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">email_regex</span><span class="p">,</span> <span class="n">email</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_date</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+    <span class="n">date_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d</span><span class="si">{4}</span><span class="s1">$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">date_regex</span><span class="p">,</span> <span class="n">date</span><span class="p">))</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="c1"># Test cases</span>
-<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;test@example.com&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;user.name+tag+sorting@example.com&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;user@sub.example.com&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;invalid-email&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;@missinguser.com&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;user@.com&quot;</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;31/12/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;01/01/2000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;29/02/2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;32/01/2021&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;12/13/2021&quot;</span>
 <span class="p">]</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39;Valid&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_valid_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Invalid&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#Print the date</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="nv">@example</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="w"> </span><span class="n">Valid</span>
-<span class="k">user</span><span class="p">.</span><span class="n">name</span><span class="o">+</span><span class="n">tag</span><span class="o">+</span><span class="n">sorting</span><span class="nv">@example</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="w"> </span><span class="n">Valid</span>
-<span class="k">user</span><span class="nv">@sub</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="w"> </span><span class="n">Valid</span>
-<span class="n">invalid</span><span class="o">-</span><span class="nl">email</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span>
-<span class="nv">@missinguser</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span>
-<span class="k">user</span><span class="err">@</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39;Valid&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_valid_date</span><span class="p">(</span><span class="n">date</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Invalid&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">31</span><span class="o">/</span><span class="mf">12</span><span class="o">/</span><span class="mf">2020</span><span class="p">:</span><span class="w"> </span><span class="nb">Val</span><span class="n">id</span>
+<span class="mf">01</span><span class="o">/</span><span class="mf">01</span><span class="o">/</span><span class="mf">2000</span><span class="p">:</span><span class="w"> </span><span class="nb">Val</span><span class="n">id</span>
+<span class="mf">29</span><span class="o">/</span><span class="mf">02</span><span class="o">/</span><span class="mf">2021</span><span class="p">:</span><span class="w"> </span><span class="nb">Val</span><span class="n">id</span>
+<span class="mf">32</span><span class="o">/</span><span class="mf">01</span><span class="o">/</span><span class="mf">2021</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span>
+<span class="mf">12</span><span class="o">/</span><span class="mf">13</span><span class="o">/</span><span class="mf">2021</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
@@ -98,6 +101,84 @@
 
                 <hr  class="gradient"/>
 
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/email-validation.html"><h3 class="article-title">Email-Validation</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Validates if a given email address meets common email standards.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_email</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
+    <span class="c1"># Regular expression for validating an email</span>
+    <span class="n">email_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">email_regex</span><span class="p">,</span> <span class="n">email</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test cases</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;test@example.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user.name+tag+sorting@example.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user@sub.example.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;invalid-email&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;@missinguser …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/email-validation.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/extract-hashtags.html"><h3 class="article-title">Extract-Hashtags</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Extract Hashtags from Social Media Text</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_hashtags</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">hashtag_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;#\w+&#39;</span>
+    <span class="n">hashtags</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">hashtag_pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">hashtags</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hashtags found:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">hashtag</span> <span class="ow">in</span> <span class="n">hashtags</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">hashtag</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No hashtags found.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Usage: python script.py …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/extract-hashtags.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
 
         
 
@@ -152,6 +233,127 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/ip-addr-validator.html"><h3 class="article-title">Ip-Addr-Validator</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Validates if a string is a valid IPv4 address.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_ip</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
+    <span class="n">ip_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)</span><span class="si">{3}</span><span class="s1">(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">ip_regex</span><span class="p">,</span> <span class="n">ip</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test cases</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ips</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;255.255.255.255 …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/ip-addr-validator.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/log-file-ip.html"><h3 class="article-title">Log-File-Ip</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Log File IP Extractor</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_ips</span><span class="p">(</span><span class="n">log_data</span><span class="p">):</span>
+    <span class="n">ip_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\b(?:\d{1,3}\.)</span><span class="si">{3}</span><span class="s1">\d{1,3}\b&#39;</span>
+    <span class="n">ips</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">ip_pattern</span><span class="p">,</span> <span class="n">log_data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ips</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IP addresses found:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="n">ips</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No IP addresses found.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/log-file-ip.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/phone-no-extractor.html"><h3 class="article-title">Phone-No-Extractor</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Extracts phone numbers in various formats from a block of text.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_phone_numbers</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">phone_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\+?\d[\d\s()-]{7,}\d&#39;</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">phone_regex</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Test Text</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test text</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Here are some phone numbers:</span>
+<span class="s2">- +1-800-555-1234</span>
+<span class="s2">- (123) 456 7890</span>
+<span class="s2">- 1234567890</span>
+<span class="s2">- +91 9876543210</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Phone Numbers </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">phones</span> <span class="o">=</span> <span class="n">extract_phone_numbers</span><span class="p">(</span><span class="n">text …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/phone-no-extractor.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/replace-specific-words.html"><h3 class="article-title">Replace-Specific-Words</h3></a>
 <h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
@@ -193,28 +395,99 @@
 
 
             <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/untitled.html"><h3 class="article-title">Untitled</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+                <a href="https://Soundarya-Murugan.github.io/pynotes/url-extractor.html"><h3 class="article-title">Url-Extractor</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
-<hr>
-<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+<div class="highlight"><pre><span></span><code><span class="c1">#Finds and extracts all URLs from a given text.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_urls</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">url_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;https?://(?:www\.)?\S+\.\S+&#39;</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">url_regex</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test text</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Check out the following websites:</span>
+<span class="s2">- https://www.example.com</span>
+<span class="s2">- http://openai.com</span>
+<span class="s2">- https://sub.domain.com/page</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">urls</span> <span class="o">=</span> <span class="n">extract_urls</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracted …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
 
 </p>
 
 
 
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/untitled.html">Read More</a>
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/url-extractor.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/username-validator.html"><h3 class="article-title">Username-Validator</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Validates if a username meets specific criteria (e.g., length, characters).</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_username</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+    <span class="n">username_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9_]{5,15}$&#39;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">username_regex</span><span class="p">,</span> <span class="n">username</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Test cases</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">usernames</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;toolongusername123456&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;valid_user&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;invalid-user!&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">usernames</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39;Valid&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_valid_username</span><span class="p">(</span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Invalid&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">user_123</span><span class="o">:</span><span class="w"> </span><span class="n">Valid …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/username-validator.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 1 of 1</h6>
+<h6 class="subheader">Page 1 of 2</h6>
 
 <p>
 
+        <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex2.html">Next &raquo;</a>
 </p>
 </div>
 
