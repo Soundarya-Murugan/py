@@ -47,8 +47,44 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/list-of-nested-objects.html"><h3 class="article-title">List-Of-Nested-Objects</h3></a>
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SubExample</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">SubExample</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">SubExample</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Use list comprehension to access the attribute &#39;c&#39; in each object in the list &#39;a&#39;</span>
+<span class="n">c_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">magicattr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/list-of-nested-objects.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/modifying-nested-values.html"><h3 class="article-title">Modifying-Nested-Values</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -84,7 +120,7 @@
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/multiple-names.html"><h3 class="article-title">Multiple-Names</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -137,7 +173,7 @@ dorky-scarlet-horse
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/nested-attribute-exists.html"><h3 class="article-title">Nested-Attribute-Exists</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -177,7 +213,7 @@ dorky-scarlet-horse
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/palindromatic-names.html"><h3 class="article-title">Palindromatic-Names</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -219,7 +255,7 @@ Is palindrome: False
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/prefix-len.html"><h3 class="article-title">Prefix-Len</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -267,7 +303,7 @@ Is palindrome: False
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/print-names-len.html"><h3 class="article-title">Print-Names-Len</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -301,7 +337,7 @@ Is palindrome: False
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/randam-name-pwd.html"><h3 class="article-title">Randam-Name-Pwd</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -348,7 +384,7 @@ Is palindrome: False
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/replace-specific-words.html"><h3 class="article-title">Replace-Specific-Words</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -389,7 +425,7 @@ Is palindrome: False
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/retrieve-multiple-attributes.html"><h3 class="article-title">Retrieve-Multiple-Attributes</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
 </h6>
 
 
@@ -419,52 +455,6 @@ Is palindrome: False
 
 
                 <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/retrieve-multiple-attributes.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/return-img-obj.html"><h3 class="article-title">Return-Img-Obj</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">barcode</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">barcode.writer</span> <span class="kn">import</span> <span class="n">ImageWriter</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">ean</span> <span class="o">=</span> <span class="n">barcode</span><span class="o">.</span><span class="n">get_barcode_class</span><span class="p">(</span><span class="s1">&#39;ean13&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">ean_code</span> <span class="o">=</span> <span class="n">ean</span><span class="p">(</span><span class="s1">&#39;123456789012&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">ImageWriter</span><span class="p">())</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Return image object instead of saving</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">ean_code</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Show the image</span>
-<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/return-img-obj.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

@@ -1,6 +1,6 @@
 ---
 title: Embed-Gui
-date: 2024-11-22
+date: 2024-11-23
 author: Your Name
 cell_count: 13
 score: 10

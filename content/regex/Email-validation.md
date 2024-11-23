@@ -1,41 +1,55 @@
 ---
 title: Email-Validation
-date: 2024-11-22
+date: 2024-11-23
 author: Your Name
-cell_count: 4
-score: 0
+cell_count: 5
+score: 5
 ---
 
 ```python
 import re
 
-```
-
-
-```python
-def validate_email(email):
-    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-if re.match(pattern, email):
-        return True
-    else:
-        return False
 
 ```
 
 
 ```python
+def is_valid_email(email):
+    # Regular expression for validating an email
+    email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return bool(re.match(email_regex, email))
 
-email = input("Enter email: ")
-if validate_email(email):
-    print("Valid email")
-else:
-    print("Invalid email")
+
 ```
 
-    Enter email:  sound@gmail.com
+
+```python
+# Test cases
+emails = [
+    "test@example.com",
+    "user.name+tag+sorting@example.com",
+    "user@sub.example.com",
+    "invalid-email",
+    "@missinguser.com",
+    "user@.com"
+]
 
 
-    Invalid email
+
+```
+
+
+```python
+for email in emails:
+    print(f"{email}: {'Valid' if is_valid_email(email) else 'Invalid'}")
+```
+
+    test@example.com: Valid
+    user.name+tag+sorting@example.com: Valid
+    user@sub.example.com: Valid
+    invalid-email: Invalid
+    @missinguser.com: Invalid
+    user@.com: Invalid
 
 
 
@@ -45,4 +59,4 @@ else:
 
 
 ---
-**Score: 0**
+**Score: 5**

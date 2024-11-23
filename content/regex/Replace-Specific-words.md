@@ -1,8 +1,8 @@
 ---
 title: Replace-Specific-Words
-date: 2024-11-22
+date: 2024-11-23
 author: Your Name
-cell_count: 7
+cell_count: 8
 score: 5
 ---
 
@@ -19,8 +19,6 @@ def replace_words(text, word_dict):
         pattern = r'\b' + re.escape(word) + r'\b'
         text = re.sub(pattern, replacement, text)
     return text
-
-
 
 ```
 
@@ -49,6 +47,11 @@ print("Modified text:", modified_text)
 
     Modified text: I love Java. Java is awesome.
 
+
+
+```python
+
+```
 
 
 ```python
