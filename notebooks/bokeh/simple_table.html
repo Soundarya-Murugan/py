@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div id="d5863497-92e3-41cd-bf52-a3f865d20cc7" data-root-id="p1013" style="display: contents;"></div>
+  
+    <script type="application/json" id="b66a61c6-ff85-41a6-af1f-a7f5d5a080d4">
+      {"f0e42887-973d-4a46-838b-4369177ca5ee":{"version":"3.4.1","title":"Bokeh Application","roots":[{"type":"object","name":"DataTable","id":"p1013","attributes":{"width":400,"height":280,"source":{"type":"object","name":"ColumnDataSource","id":"p1001","attributes":{"selected":{"type":"object","name":"Selection","id":"p1002","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1003"},"data":{"type":"map","entries":[["name",["Alice","Bob","Charlie"]],["age",[24,30,22]],["city",["New York","Los Angeles","Chicago"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1017","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1018"}}},"columns":[{"type":"object","name":"TableColumn","id":"p1004","attributes":{"field":"name","title":"Name","formatter":{"type":"object","name":"StringFormatter","id":"p1005"},"editor":{"type":"object","name":"StringEditor","id":"p1006"}}},{"type":"object","name":"TableColumn","id":"p1007","attributes":{"field":"age","title":"Age","formatter":{"type":"object","name":"StringFormatter","id":"p1008"},"editor":{"type":"object","name":"StringEditor","id":"p1009"}}},{"type":"object","name":"TableColumn","id":"p1010","attributes":{"field":"city","title":"City","formatter":{"type":"object","name":"StringFormatter","id":"p1011"},"editor":{"type":"object","name":"StringEditor","id":"p1012"}}}]}}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('b66a61c6-ff85-41a6-af1f-a7f5d5a080d4').textContent;
+              const render_items = [{"docid":"f0e42887-973d-4a46-838b-4369177ca5ee","roots":{"p1013":"d5863497-92e3-41cd-bf52-a3f865d20cc7"},"root_ids":["p1013"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>
