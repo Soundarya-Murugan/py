@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Extract-Para</title>
+
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://Soundarya-Murugan.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://Soundarya-Murugan.github.io/pynotes">pynotes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/extract-para.html" rel="bookmark"
+        title="Permalink to Extract-Para">Extract-Para</a></h3>
+    </header>
+
+<h6 class="subheader" title="2024-11-27T00:00:00-05:00">Wed 27 November 2024
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1">#. Paragraph and Heading Scraping</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Scrape all &lt;p&gt; tags and &lt;h1&gt; to &lt;h6&gt; headings from a webpage.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># URL of the page to scrape</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://books.toscrape.com/catalogue/category/books/poetry_23/index.html&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Fetch the HTML content using requests</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Check if the request was successful</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># Parse the HTML content with BeautifulSoup</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Find all p tags (paragraphs)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>    <span class="n">paragraphs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">([</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="s1">&#39;h1&#39;</span><span class="p">,</span><span class="s1">&#39;h2&#39;</span><span class="p">,</span><span class="s1">&#39;h3&#39;</span><span class="p">,</span><span class="s1">&#39;h4&#39;</span><span class="p">,</span><span class="s1">&#39;h5&#39;</span><span class="p">,</span><span class="s1">&#39;h6&#39;</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Loop through all the paragraphs and print their text</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>    <span class="k">for</span> <span class="n">para</span> <span class="ow">in</span> <span class="n">paragraphs</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">para</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nv">Poetry</span>
+
+
+
+
+
+
+
+<span class="nv">A</span><span class="w"> </span><span class="nv">Light</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span>...
+£<span class="mi">51</span>.<span class="mi">77</span>
+
+
+
+<span class="w">        </span><span class="nv">In</span><span class="w"> </span><span class="nv">stock</span>
+
+
+
+
+
+
+
+
+
+<span class="nv">The</span><span class="w"> </span><span class="nv">Black</span><span class="w"> </span><span class="nv">Maria</span>
+£<span class="mi">52</span>.<span class="mi">15</span>
+
+
+
+<span class="w">        </span><span class="nv">In</span><span class="w"> </span><span class="nv">stock</span>
+
+
+
+
+
+
+
+
+
+<span class="nv">Shakespeare</span><span class="err">&#39;s Sonnets</span>
+<span class="err">£20.66</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Olio</span>
+<span class="err">£23.88</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="nv">You</span><span class="w"> </span><span class="nv">can</span><span class="err">&#39;t bury them ...</span>
+<span class="err">£33.63</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Slow States of Collapse: ...</span>
+<span class="err">£57.31</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Untitled Collection: Sabbath Poems ...</span>
+<span class="err">£14.27</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Poems That Make Grown ...</span>
+<span class="err">£14.19</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Night Sky with Exit ...</span>
+<span class="err">£41.05</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">salt.</span>
+<span class="err">£46.78</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Quarter Life Poetry: Poems ...</span>
+<span class="err">£50.89</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Out of Print: City ...</span>
+<span class="err">£53.64</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Les Fleurs du Mal</span>
+<span class="err">£29.04</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Howl and Other Poems</span>
+<span class="err">£40.45</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Leave This Song Behind: ...</span>
+<span class="err">£51.17</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">The Collected Poems of ...</span>
+<span class="err">£15.42</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">The Crossover</span>
+<span class="err">£38.77</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Booked</span>
+<span class="err">£17.49</span>
+
+
+
+<span class="err">        In stock</span>
+
+
+
+
+
+
+
+
+
+<span class="err">Twenty Love Poems and ...</span>
+<span class="err">£30.95</span>
+
+
+
+<span class="err">        In stock</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 15</strong></p>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/beautifulsoup.html">Beautifulsoup</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/beautifulsoup.html">Beautifulsoup</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pillow.html">Pillow</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/Soundarya-Murugan">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>pynotes by soundarya</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Extract-Links</title>
+
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://Soundarya-Murugan.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://Soundarya-Murugan.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://Soundarya-Murugan.github.io/pynotes">pynotes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://Soundarya-Murugan.github.io/pynotes/extract-links.html" rel="bookmark"
+        title="Permalink to Extract-Links">Extract-Links</a></h3>
+    </header>
+
+<h6 class="subheader" title="2024-11-27T00:00:00-05:00">Wed 27 November 2024
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1"># Link Extraction</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Extract all the hyperlinks (&lt;a href=&quot;...&quot;&gt;) from a webpage.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># URL of the page to scrape</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://books.toscrape.com/catalogue/category/books/poetry_23/index.html&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Fetch the HTML content using requests</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Check if the request was successful</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># Parse the HTML content with BeautifulSoup</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>   <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Loop through all the links and print their href attributes</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+        <span class="n">href</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c">../../../../index.html</span>
+<span class="c">../../../../index.html</span>
+<span class="c">../../books_1/index.html</span>
+<span class="c">../../books_1/index.html</span>
+<span class="c">../travel_2/index.html</span>
+<span class="c">../mystery_3/index.html</span>
+<span class="c">../historical-fiction_4/index.html</span>
+<span class="c">../sequential-art_5/index.html</span>
+<span class="c">../classics_6/index.html</span>
+<span class="c">../philosophy_7/index.html</span>
+<span class="c">../romance_8/index.html</span>
+<span class="c">../womens-fiction_9/index.html</span>
+<span class="c">../fiction_10/index.html</span>
+<span class="c">../childrens_11/index.html</span>
+<span class="c">../religion_12/index.html</span>
+<span class="c">../nonfiction_13/index.html</span>
+<span class="c">../music_14/index.html</span>
+<span class="c">../default_15/index.html</span>
+<span class="c">../science-fiction_16/index.html</span>
+<span class="c">../sports-and-games_17/index.html</span>
+<span class="c">../add-a-comment_18/index.html</span>
+<span class="c">../fantasy_19/index.html</span>
+<span class="c">../new-adult_20/index.html</span>
+<span class="c">../young-adult_21/index.html</span>
+<span class="c">../science_22/index.html</span>
+index.html
+<span class="c">../paranormal_24/index.html</span>
+<span class="c">../art_25/index.html</span>
+<span class="c">../psychology_26/index.html</span>
+<span class="c">../autobiography_27/index.html</span>
+<span class="c">../parenting_28/index.html</span>
+<span class="c">../adult-fiction_29/index.html</span>
+<span class="c">../humor_30/index.html</span>
+<span class="c">../horror_31/index.html</span>
+<span class="c">../history_32/index.html</span>
+<span class="c">../food-and-drink_33/index.html</span>
+<span class="c">../christian-fiction_34/index.html</span>
+<span class="c">../business_35/index.html</span>
+<span class="c">../biography_36/index.html</span>
+<span class="c">../thriller_37/index.html</span>
+<span class="c">../contemporary_38/index.html</span>
+<span class="c">../spirituality_39/index.html</span>
+<span class="c">../academic_40/index.html</span>
+<span class="c">../self-help_41/index.html</span>
+<span class="c">../historical_42/index.html</span>
+<span class="c">../christian_43/index.html</span>
+<span class="c">../suspense_44/index.html</span>
+<span class="c">../short-stories_45/index.html</span>
+<span class="c">../novels_46/index.html</span>
+<span class="c">../health_47/index.html</span>
+<span class="c">../politics_48/index.html</span>
+<span class="c">../cultural_49/index.html</span>
+<span class="c">../erotica_50/index.html</span>
+<span class="c">../crime_51/index.html</span>
+<span class="c">../../../a-light-in-the-attic_1000/index.html</span>
+<span class="c">../../../a-light-in-the-attic_1000/index.html</span>
+<span class="c">../../../the-black-maria_991/index.html</span>
+<span class="c">../../../the-black-maria_991/index.html</span>
+<span class="c">../../../shakespeares-sonnets_989/index.html</span>
+<span class="c">../../../shakespeares-sonnets_989/index.html</span>
+<span class="c">../../../olio_984/index.html</span>
+<span class="c">../../../olio_984/index.html</span>
+<span class="c">../../../you-cant-bury-them-all-poems_961/index.html</span>
+<span class="c">../../../you-cant-bury-them-all-poems_961/index.html</span>
+<span class="c">../../../slow-states-of-collapse-poems_960/index.html</span>
+<span class="c">../../../slow-states-of-collapse-poems_960/index.html</span>
+<span class="c">../../../untitled-collection-sabbath-poems-2014_953/index.html</span>
+<span class="c">../../../untitled-collection-sabbath-poems-2014_953/index.html</span>
+<span class="c">../../../poems-that-make-grown-women-cry_824/index.html</span>
+<span class="c">../../../poems-that-make-grown-women-cry_824/index.html</span>
+<span class="c">../../../night-sky-with-exit-wounds_822/index.html</span>
+<span class="c">../../../night-sky-with-exit-wounds_822/index.html</span>
+<span class="c">../../../salt_731/index.html</span>
+<span class="c">../../../salt_731/index.html</span>
+<span class="c">../../../quarter-life-poetry-poems-for-the-young-broke-and-hangry_727/index.html</span>
+<span class="c">../../../quarter-life-poetry-poems-for-the-young-broke-and-hangry_727/index.html</span>
+<span class="c">../../../out-of-print-city-lights-spotlight-no-14_536/index.html</span>
+<span class="c">../../../out-of-print-city-lights-spotlight-no-14_536/index.html</span>
+<span class="c">../../../les-fleurs-du-mal_530/index.html</span>
+<span class="c">../../../les-fleurs-du-mal_530/index.html</span>
+<span class="c">../../../howl-and-other-poems_522/index.html</span>
+<span class="c">../../../howl-and-other-poems_522/index.html</span>
+<span class="c">../../../leave-this-song-behind-teen-poetry-at-its-best_474/index.html</span>
+<span class="c">../../../leave-this-song-behind-teen-poetry-at-its-best_474/index.html</span>
+<span class="c">../../../the-collected-poems-of-wb-yeats-the-collected-works-of-wb-yeats-1_441/index.html</span>
+<span class="c">../../../the-collected-poems-of-wb-yeats-the-collected-works-of-wb-yeats-1_441/index.html</span>
+<span class="c">../../../the-crossover_398/index.html</span>
+<span class="c">../../../the-crossover_398/index.html</span>
+<span class="c">../../../booked_365/index.html</span>
+<span class="c">../../../booked_365/index.html</span>
+<span class="c">../../../twenty-love-poems-and-a-song-of-despair_91/index.html</span>
+<span class="c">../../../twenty-love-poems-and-a-song-of-despair_91/index.html</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 10</strong></p>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/beautifulsoup.html">Beautifulsoup</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/beautifulsoup.html">Beautifulsoup</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/ean-13.html">EAN-13</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pillow.html">Pillow</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/Soundarya-Murugan">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>pynotes by soundarya</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
