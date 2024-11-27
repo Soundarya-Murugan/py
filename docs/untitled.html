@@ -48,21 +48,49 @@
         title="Permalink to Untitled">Untitled</a></h3>
     </header>
 
-<h6 class="subheader" title="2024-11-23T00:00:00-05:00">Sat 23 November 2024
+<h6 class="subheader" title="2024-11-27T00:00:00-05:00">Wed 27 November 2024
 </h6>
 
-Translations: 
-        <a href="https://Soundarya-Murugan.github.io/pynotes/untitled.html">en</a>
 
-    <hr>
+    <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">rotate_list</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rotate a list by k positions.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    lst: list - the list to rotate</span>
+<span class="sd">    k: int - the number of positions to rotate</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    list - the rotated list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">lst</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>  
+    <span class="k">return</span> <span class="n">lst</span><span class="p">[</span><span class="o">-</span><span class="n">k</span><span class="p">:]</span> <span class="o">+</span> <span class="n">lst</span><span class="p">[:</span><span class="o">-</span><span class="n">k</span><span class="p">]</span>
+
+<span class="c1"># Sample test cases</span>
+<span class="c1"># print(rotate_list([1, 2, 3, 4, 5], 2))  # Output: [4, 5, 1, 2, 3]</span>
+<span class="c1"># print(rotate_list([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;], 3))  # Output: [&#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;a&#39;, &#39;b&#39;]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">rotate_list</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>[&#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;a&#39;, &#39;b&#39;]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
 <p><strong>Score: 0</strong></p>
-<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a>
+<p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/basics.html">basics</a>
 
 </p>
 
 
-Translations: 
-        <a href="https://Soundarya-Murugan.github.io/pynotes/untitled.html">en</a>
 
 
 </article>
@@ -88,6 +116,7 @@ Translations:
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/pyplot.html">Pyplot</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a></li>
             <li><a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a></li>
    
         </ul>
