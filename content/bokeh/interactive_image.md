@@ -1,6 +1,6 @@
 ---
 title: Interactive Image
-date: 2024-11-27
+date: 2024-11-29
 author: Your Name
 cell_count: 9
 score: 5
