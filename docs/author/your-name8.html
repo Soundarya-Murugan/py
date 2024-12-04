@@ -47,8 +47,90 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/random-two-values.html"><h3 class="article-title">Random-Two-Values</h3></a>
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Generate a Random Integer Between Two Values</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Random integer between 1 and 100</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">random_integer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">random_integer</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">35</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/random-two-values.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/replace-specific-words.html"><h3 class="article-title">Replace-Specific-Words</h3></a>
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">replace_words</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">word_dict</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">replacement</span> <span class="ow">in</span> <span class="n">word_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\b&#39;</span> <span class="o">+</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;\b&#39;</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I love Python. Python is awesome.&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">word_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Python&quot;</span><span class="p">:</span> <span class="s2">&quot;Java&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">modified_text</span> <span class="o">=</span> <span class="n">replace_words</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">word_dict</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified text:&quot;</span><span class="p">,</span> <span class="n">modified_text</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Modified text: I love …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/regex.html">regex</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/replace-specific-words.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/retrieve-multiple-attributes.html"><h3 class="article-title">Retrieve-Multiple-Attributes</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -86,7 +168,7 @@
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/return-img-obj.html"><h3 class="article-title">Return-Img-Obj</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -132,7 +214,7 @@
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/reverse-random-names.html"><h3 class="article-title">Reverse-Random-Names</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -173,7 +255,7 @@ Reversed name: ognob-nirazila-ysaeuq
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/reversed.html"><h3 class="article-title">Reversed</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -215,7 +297,7 @@ Reversed name: ognob-nirazila-ysaeuq
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/set-attributes-nested.html"><h3 class="article-title">Set-Attributes-Nested</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -255,7 +337,7 @@ Reversed name: ognob-nirazila-ysaeuq
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/set-nested-atrrbu.html"><h3 class="article-title">Set-Nested-Atrrbu</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -295,7 +377,7 @@ Reversed name: ognob-nirazila-ysaeuq
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/shuffle-list.html"><h3 class="article-title">Shuffle-List</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -339,7 +421,7 @@ Reversed name: ognob-nirazila-ysaeuq
 
             <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/simple-table.html"><h3 class="article-title">Simple Table</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
@@ -378,89 +460,9 @@ Reversed name: ognob-nirazila-ysaeuq
                 <hr  class="gradient"/>
             </article>
 
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/slider-plot.html"><h3 class="article-title">Slider Plot</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="c1">#Slider PLot</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">save</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">Slider</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.layouts</span> <span class="kn">import</span> <span class="n">column</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">output_file</span><span class="p">(</span><span class="s2">&quot;slider_plot.html&quot;</span><span class="p">)</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Interactive Slider Plot&quot;</span><span class="p">,</span> <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
-
-<span class="c1"># Initial line</span>
-<span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2 …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/slider-plot.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/solid-color-image.html"><h3 class="article-title">Solid Color Image</h3></a>
-<h6 class="subheader" title="2024-11-30T00:00:00-05:00">Sat 30 November 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Generate a Solid Color Image</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Create a new image with solid color</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code> <span class="c1"># Red color</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;solid_color_image.png&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/pillow.html">Pillow</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/solid-color-image.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 8 of 9</h6>
+<h6 class="subheader">Page 8 of 10</h6>
 
 <p>
             <a href="https://Soundarya-Murugan.github.io/pynotes/author/your-name7.html">&laquo; Prev</a>
