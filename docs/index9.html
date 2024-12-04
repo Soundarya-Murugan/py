@@ -47,6 +47,138 @@
 
 
             <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/randam-name-pwd.html"><h3 class="article-title">Randam-Name-Pwd</h3></a>
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">namegenerator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">string</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_password</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">namegenerator</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">random_char</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">name</span> <span class="o">+</span> <span class="n">random_char</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">password</span> <span class="o">=</span> <span class="n">generate_password</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated password: </span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Generated password: muzzy-linen-flounder]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/namegenerator.html">namegenerator</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/randam-name-pwd.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/random-list.html"><h3 class="article-title">Random-List</h3></a>
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Pick a Random Element from a List</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># List of items</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">random_item</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">random_item</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>date
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/random-list.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/random-two-values.html"><h3 class="article-title">Random-Two-Values</h3></a>
+<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Generate a Random Integer Between Two Values</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Random integer between 1 and 100</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">random_integer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">random_integer</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">35</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/random-two-values.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://Soundarya-Murugan.github.io/pynotes/regression-seaborn.html"><h3 class="article-title">Regression-Seaborn</h3></a>
 <h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
@@ -334,134 +466,6 @@ Reversed name: ognob-nirazila-ysaeuq
 
 
                 <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/set-attributes-nested.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/set-nested-atrrbu.html"><h3 class="article-title">Set-Nested-Atrrbu</h3></a>
-<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">magicattr</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Define the class</span>
-<span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}</span>  <span class="c1"># a dictionary inside the object</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Create an instance of Example</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Directly modify the dictionary attribute</span>
-<span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;new_value&#39;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># Output the modified value</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">][</span><span class="s1">&#39;c&#39;</span><span class="p">])</span>  <span class="c1"># Expected Output: &#39;new_value&#39;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>new_value …</code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/magicattr.html">magicattr</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/set-nested-atrrbu.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/shuffle-list.html"><h3 class="article-title">Shuffle-List</h3></a>
-<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="c1">#Shuffle a List</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1"># List of items</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>[4, 2, 5, 3, 1]
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/random.html">random</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/shuffle-list.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/simple-table.html"><h3 class="article-title">Simple Table</h3></a>
-<h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="c1">#Simple Tab</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">DataTable</span><span class="p">,</span> <span class="n">TableColumn</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">save</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">output_file</span><span class="p">(</span><span class="s2">&quot;simple_table.html&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span>
-    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;Los Angeles&#39;</span><span class="p">,</span> <span class="s1">&#39;Chicago&#39;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">TableColumn</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">),</span>
-    <span class="n">TableColumn</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">),</span>
-    <span class="n">TableColumn</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s2">&quot;city …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/simple-table.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

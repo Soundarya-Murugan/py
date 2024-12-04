@@ -403,39 +403,45 @@ dorky-scarlet-horse
 
 
             <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/multiple-plots-seaborn.html"><h3 class="article-title">Multiple-Plots-Seaborn</h3></a>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/multiple-plot-bokeh.html"><h3 class="article-title">Multiple-Plot-Bokeh</h3></a>
 <h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
-<div class="highlight"><pre><span></span><code><span class="c1">#various plots such as scatter plots, bar plots, box plots, and histograms</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#Display multiple using bokeh</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1">#And display them in a grid layout using matplotlib&#39;s plt.subplots()</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#Bokeh library to create a series of plots, and display them as multiple images:</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">save</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">export_png</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">ColumnDataSource</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># Load a sample dataset (Iris dataset)</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Output HTML file</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/seaborn.html">seaborn</a>
+<div class="highlight"><pre><span></span><code><span class="n">output_file</span><span class="p">(</span><span class="s2">&quot;bokeh_plots.html&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Data for the plots</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">x …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/bokeh.html">bokeh</a>
 
 </p>
 
 
 
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/multiple-plots-seaborn.html">Read More</a>
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/multiple-plot-bokeh.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
@@ -443,42 +449,45 @@ dorky-scarlet-horse
 
 
             <article>
-                <a href="https://Soundarya-Murugan.github.io/pynotes/multiplelines-seaborn.html"><h3 class="article-title">Multiplelines-Seaborn</h3></a>
+                <a href="https://Soundarya-Murugan.github.io/pynotes/multiple-plot-matplot.html"><h3 class="article-title">Multiple-Plot-Matplot</h3></a>
 <h6 class="subheader" title="2024-12-04T00:00:00-05:00">Wed 04 December 2024
 </h6>
 
 
-<div class="highlight"><pre><span></span><code><span class="c1">#Line Plot with Multiple Lines</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#Multiple matplot display grid</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#line, scatter, bar, and histogram) with unique data for variety.</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># Create sample data</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate data for different plots</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">),</span>
-    <span class="s1">&#39;Y1&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)),</span>
-    <span class="s1">&#39;Y2&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100 …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/seaborn.html">seaborn</a>
+<div class="highlight"><pre><span></span><code><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">y3</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size …</span></code></pre></div><p class="subheader">Category: <a href="https://Soundarya-Murugan.github.io/pynotes/category/matplotlib.html">matplotlib</a>
 
 </p>
 
 
 
-                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/multiplelines-seaborn.html">Read More</a>
+                <a class="button radius secondary small right" href="https://Soundarya-Murugan.github.io/pynotes/multiple-plot-matplot.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
